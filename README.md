@@ -6,7 +6,7 @@ Classic Migrator is distributed as a single binary (built by Go), which serves a
 
 ## Running the Classic-Migrator
 
-### Building it:
+### Downloading:
 ```
 cd <this repo>
 go build -o classic-migrator .
@@ -28,11 +28,11 @@ export ENV=development
 go run . --working-dir /tmp/foo
 ```
 
-### Performing the migration:
+## Performing the migration:
 
 If not already done, [create a new environment](https://docs.honeycomb.io/honeycomb-classic/migration/#create-a-new-environment) (the migration destination). 
 
-Next, [create API keys](https://docs.honeycomb.io/working-with-your-data/settings/api-keys/) for both the classic and new environments with the following permissions: Send Events, Create Datasets, Manage Queries and Columns, Run Queries, Manage Public Boards, Manage SLOs, Manage Triggers, Manage Recipients.
+Next, [create API keys](https://docs.honeycomb.io/working-with-your-data/settings/api-keys/) for both the classic and new environments with the following permissions: Send Events, Create Datasets, Manage Queries and Columns, Manage Public Boards, Manage SLOs, Manage Triggers, Manage Recipients.
 
 Now visit http://localhost:8000 in your browser and you will be asked to enter in the API keys created previously. Click 'Let's get started!' and on the next page select the Classic dataset you want to migrate.
 
