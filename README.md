@@ -6,37 +6,30 @@ Classic Migrator is distributed as a single binary (built by Go), which serves a
 
 ## Running the Classic-Migrator
 
-### Building it:
-```
-cd <this repo>
-go build -o classic-migrator .
-strip classic-migrator
-```
-### Standard run:
-```
-$ classic-migrator --listen-on localhost:8000 --working-dir /tmp/foo
-Welcome to the Honeycomb Classic Migrator! version: dev
+### Downloading it:
+Grab the latest release from the [Releases section](https://github.com/honeycombio/terraform-tools/releases) of this repo
 
-Using working directory: /tmp/foo (override with --working-dir)
+On Mac and Linux, remember to `chmod +x classic-migrator` after downloading
+
+### Running it:
+```
+./classic-migrator --listen-on localhost:8000 --working-dir ~/migrations/
+
 To get started, visit http://localhost:8000 in your browser.
 ```
 
-### Dev mode:
-```
-cd <this repo>
-export ENV=development
-go run . --working-dir /tmp/foo
-```
+### debug mode:
+set `ENV=development` before running the classic-migrator command
 
 ### Performing the migration:
 
-If not already done, [create a new environment](https://docs.honeycomb.io/honeycomb-classic/migration/#create-a-new-environment) (the migration destination). 
+If not already done, [create a new environment](https://docs.honeycomb.io/honeycomb-classic/migration/#create-a-new-environment) (the migration destination).
 
 Next, [create API keys](https://docs.honeycomb.io/working-with-your-data/settings/api-keys/) for both the classic and new environments with the following permissions: Send Events, Create Datasets, Manage Queries and Columns, Run Queries, Manage Public Boards, Manage SLOs, Manage Triggers, Manage Recipients.
 
 Now visit http://localhost:8000 in your browser and you will be asked to enter in the API keys created previously. Click 'Let's get started!' and on the next page select the Classic dataset you want to migrate.
 
-After selecting a dataset the migrator will import all resources, identify & fix (when possible) any that cannot be migrated, and present a list of SLOs and Triggers. SLOs and Triggers require mapping to a specific dataset in the new environment. 
+After selecting a dataset the migrator will import all resources, identify & fix (when possible) any that cannot be migrated, and present a list of SLOs and Triggers. SLOs and Triggers require mapping to a specific dataset in the new environment.
 
 To decide which dataset to select, first check if any of these are no longer needed/in use and could be ignored. Next, consider if any of your Triggers or SLOs could be reworked to look at a gateway service or other common point of infrastructure. For the remainder, you can mouse over 'Open Query' to see the query in question. If a service name is defined, choose that service name as the destination dataset. Should you need to map a Trigger or SLO to multiple datasets, simply select one on this screen and after the migration on the next step is complete, you can edit the resources.tf file and make as many copies of the resources as needed, up to your team's limits.
 
