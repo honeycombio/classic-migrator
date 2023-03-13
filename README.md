@@ -19,6 +19,7 @@ To get started, visit http://localhost:8000 in your browser.
 ```
 
 ### Demo Video
+(Click the unmute icon to hear the voice track)
 https://user-images.githubusercontent.com/1616328/224799312-ea835129-6c22-49e3-88a0-020e399b21c2.mp4
 
 ### debug mode:
