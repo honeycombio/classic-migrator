@@ -6,12 +6,12 @@ Classic Migrator is distributed as a single binary (built by Go), which serves a
 
 ## Running the Classic-Migrator
 
-### Downloading it:
+### Downloading:
 Grab the latest release from the [Releases section](https://github.com/honeycombio/terraform-tools/releases) of this repo
 
 On Mac and Linux, remember to `chmod +x classic-migrator` after downloading
 
-### Running it:
+### Running:
 ```
 ./classic-migrator --listen-on localhost:8000 --working-dir ~/migrations/
 
@@ -30,7 +30,7 @@ set `ENV=development` before running the classic-migrator command
 
 If not already done, [create a new environment](https://docs.honeycomb.io/honeycomb-classic/migration/#create-a-new-environment) (the migration destination).
 
-Next, [create API keys](https://docs.honeycomb.io/working-with-your-data/settings/api-keys/) for both the classic and new environments with the following permissions: Send Events, Create Datasets, Manage Queries and Columns, Run Queries, Manage Public Boards, Manage SLOs, Manage Triggers, Manage Recipients.
+Next, [create API keys](https://docs.honeycomb.io/working-with-your-data/settings/api-keys/) for both the classic and new environments with the following permissions: Send Events, Create Datasets, Manage Queries and Columns, Manage Public Boards, Manage SLOs, Manage Triggers, Manage Recipients.
 
 Now visit http://localhost:8000 in your browser and you will be asked to enter in the API keys created previously. Click 'Let's get started!' and on the next page select the Classic dataset you want to migrate.
 
