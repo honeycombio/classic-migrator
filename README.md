@@ -7,9 +7,11 @@ Classic Migrator is distributed as a single binary (built by Go), which serves a
 ## Running the Classic-Migrator
 
 ### Downloading:
-Grab the latest release from the [Releases section](https://github.com/honeycombio/terraform-tools/releases) of this repo
+Grab the latest release from the [Releases section](https://github.com/honeycombio/classic-migrator/releases) of this repo
 
 On Mac and Linux, remember to `chmod +x classic-migrator` after downloading
+
+If you're on macOS and the application gets blocked due to being from an "unidentified developer", you'll need to change [this setting in your Privacy & Security settings](https://osxdaily.com/2022/11/17/allow-apps-downloaded-open-anywhere-macos/)
 
 ### Running:
 ```
