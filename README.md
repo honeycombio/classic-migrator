@@ -11,8 +11,6 @@ Grab the latest release from the [Releases section](https://github.com/honeycomb
 
 On Mac and Linux, remember to `chmod +x classic-migrator` after downloading
 
-If you're on macOS and the application gets blocked due to being from an "unidentified developer", you'll need to change [this setting in your Privacy & Security settings](https://osxdaily.com/2022/11/17/allow-apps-downloaded-open-anywhere-macos/)
-
 ### Running:
 ```
 ./classic-migrator --listen-on localhost:8000 --working-dir ~/migrations/
@@ -41,3 +39,19 @@ After selecting a dataset the migrator will import all resources, identify & fix
 To decide which dataset to select, first check if any of these are no longer needed/in use and could be ignored. Next, consider if any of your Triggers or SLOs could be reworked to look at a gateway service or other common point of infrastructure. For the remainder, you can mouse over 'Open Query' to see the query in question. If a service name is defined, choose that service name as the destination dataset. Should you need to map a Trigger or SLO to multiple datasets, simply select one on this screen and after the migration on the next step is complete, you can edit the resources.tf file and make as many copies of the resources as needed, up to your team's limits.
 
 Once all Triggers and SLOs have been mapped to a destination dataset, click 'Migrate this dataset!' and the terraform will run. Should any errors arise, review the troubleshooting steps on screen and edit the resources.tf file as needed. If you have any questions, please reach out to https://support.honeycomb.io/ or our [Pollinators Community Slack](https://join.slack.com/t/honeycombpollinators/shared_invite/zt-xqexg936-dckd0l29wdE3WLmUs8Qvpg) server.
+
+## Troubleshooting
+
+### macOS unidentified developer error
+
+If you try to run the classic-migrator on macOS and receive the error:
+```
+"classic-migrator" can't be opened because it is from an unidentified developer.
+```
+
+Go to Settings -> Privacy & Security  and scroll down to the Security "Allow applications downloaded from" section.
+
+Typically, macOS will give you a chance to exempt individual apps, like so:
+![Alt text](<macos-ventura-allow-unidentified.png>)
+
+If that doesn't work, check out [these instructions](https://osxdaily.com/2022/11/17/allow-apps-downloaded-open-anywhere-macos/)
