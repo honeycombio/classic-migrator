@@ -55,3 +55,12 @@ Typically, macOS will give you a chance to exempt individual apps, like so:
 ![Screenshot of the macOS Privacy & Security Settings](<macos-ventura-allow-unidentified.png>)
 
 If that doesn't work, check out [these instructions](https://osxdaily.com/2022/11/17/allow-apps-downloaded-open-anywhere-macos/)
+
+### Apple cannot check it for malicious software error
+If you try to run the classic-migrator on macOS and receive the error:
+```
+"classic-migrator" can't be opened because Apple cannot check it for malicious software
+```
+![Screenshot of the macOS Gatekeeper error](<macos-gatekeeper-erro.png>)
+
+It doesn't necessarily mean there's anything wrong with your Mac or with the classic-migrator.  Check out [this article](https://iboysoft.com/howto/apple-cannot-check-it-for-malicious-software.html) for an explanation and instructions.  Also feel free to verify the file checksum against the `checksums.txt` file on the releases page.
