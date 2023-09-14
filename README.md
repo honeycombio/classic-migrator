@@ -52,6 +52,6 @@ If you try to run the classic-migrator on macOS and receive the error:
 Go to Settings -> Privacy & Security  and scroll down to the Security "Allow applications downloaded from" section.
 
 Typically, macOS will give you a chance to exempt individual apps, like so:
-![Alt text](<macos-ventura-allow-unidentified.png>)
+![Screenshot of the macOS Privacy & Security Settings](<macos-ventura-allow-unidentified.png>)
 
 If that doesn't work, check out [these instructions](https://osxdaily.com/2022/11/17/allow-apps-downloaded-open-anywhere-macos/)
