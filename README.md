@@ -18,6 +18,32 @@ On Mac and Linux, remember to `chmod +x classic-migrator` after downloading
 To get started, visit http://localhost:8000 in your browser.
 ```
 
+You can use the following arguments:
+```
+Usage of ./classic-migrator:
+  -listen-on string
+      The address and port to listen on (default "localhost:8000")
+  -service-name string
+      The name of the service name field to use (default "service.name")
+  -skip-columns
+      Skip columns in the migration
+  -skip-datasets
+      Skip datasets in the migration
+  -skip-dcs
+      Skip derived columns (DCs) in the migration
+  -working-dir string
+      The directory to use for storing downloaded binaries and generated Terraform modules (defaults to your $TMPDIR) (default "/var/folders/cy/kxm7nfl94mn6lmbggrjpmp540000gp/T/")
+```
+
+### Dual Ingest or Dual Send Migration
+If you're working with your Honeycomb account team to migrate, it's likely they've configured Dual Ingest on the backend to mirror your Classic events into a new Environment.   Or perhaps you're dual sending all your events using an OTel Collector with multiple exporters.
+
+In either case, use the `-skip-columns` AND `-skip-datsets` arguments in order to generate a significantly more compact output Terraform file, and it will run much more quickly.
+
+### Hybrid Migration
+If your Honeycomb account team mentions a Hybrid migration, this means we will handle the Boards and Calculated Fields (Derived Columns) migration separately on our backend.  Also use the `-skip-dcs` argument in this case.
+
+
 ### Demo Video
 (Click the unmute icon to hear the voice track)
 
